@@ -31,7 +31,7 @@ local colors_config = {
 
 }
 function background_module.changeBg(window,cmd)
-  if cmd == 'zsh' then 
+  
     window:set_config_overrides({ 
       window_background_image = '/home/joao/Pictures/blood_moon.jpg',
       window_background_image_hsb = {
@@ -46,18 +46,14 @@ function background_module.changeBg(window,cmd)
         saturation = 1.0,
       },
     })
-  elseif cmd == 'bat' or cmd == 'vim' then 
+  if cmd == 'bat' or cmd == 'vim' then 
     window:set_config_overrides({ 
-      colors = colors_config,
+      colors = default_config,
       window_background_opacity=0.8,
 
     })
-  else
-    window:set_config_overrides({ 
-      colors = default_config,
-    })
-
   end
+
   
 
 end
